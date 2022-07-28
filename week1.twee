@@ -1,0 +1,1762 @@
+:: StoryTitle
+Common Ground Template
+
+
+:: StoryData
+{
+	"ifid": "F9E39354-F641-4070-8B45-C310A3FDC8C2",
+	"format": "SugarCube",
+	"format-version": "2.36.1",
+	"start": "House",
+	"zoom": 1
+}
+
+
+:: Story Stylesheet [stylesheet]
+
+/* GENERAL STYLES */
+
+@font-face {
+    font-family: "Arcon";
+    src: url("./assets/fonts/arcon/Arcon-Regular.otf");
+}
+@font-face {
+    font-family: "SpecialElite";
+    src: url("./assets/fonts/special-elite/SpecialElite.ttf");
+}
+
+body {
+	background-color: #000;
+	font-family: "Arcon", monospace;
+	font-size: 12px;
+	height: 100vh;
+	display:flex;
+	justify-content:center;
+	align-items: center;
+}
+
+body[data-tags~="t8n-dissolve"] .transition-in {
+  position: absolute;
+  opacity: 0;
+}
+body[data-tags~="t8n-dissolve"] .passage {
+  transition: 1s;
+  -webkit-transition: 1s;
+}
+body[data-tags~="t8n-dissolve"] .transition-out {
+  position: absolute;
+  opacity: 0;
+}
+
+a {
+  color: #f2647d;
+}
+
+a:hover {
+  color: #fff;
+}
+
+#story a.link-external:after {
+	content: "";
+}
+#passages {
+	max-width: 100%;
+	font-size: 1.3rem;
+}
+
+#story {
+	margin: 0
+}
+
+main{
+	padding: 5vw;
+    width: 85vw;
+    margin-top: 6rem
+}
+
+.main-section{
+    background:#000
+}
+
+
+button{
+    background-color: transparent;
+    border: #fff 1px solid;
+    border-radius: 3px;
+}
+
+button:hover{
+	background-color:#cf1b98;
+	border: #fff 1px solid;
+	color: #fff;
+}
+
+
+img.housemap{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+}
+
+
+/* MOBILE  */
+
+@media screen and (max-width: 700px) {
+	#passages {
+height: 100%;
+overflow: scroll;
+	font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#story {
+height: 100%
+}
+
+#passage-prestart{
+	height: 100%
+}
+
+main {
+	height: 100%;
+	padding: 5vw;
+}
+
+a:active {
+  background-color: #f2647d;
+}
+
+input[type=text] {
+    min-width: 14em;
+}
+
+}
+
+/* LANDING PAGE */
+
+.landing{
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	flex-direction: column;
+background-image: url("https://youhavefoundconey.net/CG/what/assets/img/coneybg.jpg");
+    color: #000 ;
+    height:100vh;
+    width:100vw;
+    margin-top:0
+
+}
+
+.landing-wrapper{
+        background: black;   
+        width:85vw;
+        padding: 3.5vw;
+        display:flex;
+	justify-content: center;
+	align-items:center;
+	flex-direction: column;
+}
+
+.landing > h1 {
+	font-weight: 500
+}
+
+#resultbutton > button {
+	background-color:#000;
+	border: #fff 1px solid;
+	color: #fff;
+}
+
+
+.landing > button:hover {
+	background-color:#f2647d;
+	border: #fff 1px solid;
+	color: #fff;
+}
+
+.title{
+font-weight: 100;
+font-size: 3rem;
+}
+
+.story-title{
+font-weight: 100;
+font-size: 1.6rem;
+}
+
+.logo{
+    max-width: 40%;
+}
+
+@media screen and (max-width: 700px) {
+.title {
+font-weight: 100;
+font-size: 3rem;
+}
+
+.logo{
+    max-width: 90%;
+}
+}
+
+/* ANIMATION */
+
+.coneylogoglitch{
+	/* position:absolute;
+    width: 529px; */
+  opacity: 0.85;
+	transform:translate(80px, 0px);
+	 animation: 1s logoglitch linear infinite both;
+}
+
+@keyframes logoglitch {
+  0% 		{width:590px;transform:translate(60px, 40px)}
+  49.999%	{width:590px;transform:translate(60px, 40px)}
+  50%		{width:300px;transform:translate(500px, 0px)}
+  54.999%	{width:300px;transform:translate(500px, 0px)}
+  55%		{width:590px;transform:translate(60px, 40px)}
+  94.999%	{width:590px;transform:translate(60px, 40px)}
+  95%		{width:300px;transform:translate(500px, 0px)}
+  99.999%	{width:300px;transform:translate(500px, 0px)}
+  100%		{width:590px;transform:translate(60px, 40px)}
+}
+
+.glitch-shape1{    
+  background-color: cyan;
+  position:absolute;
+  width: 100px;
+  height: 500px;
+  opacity: 0.85;
+  animation: 2s glitchshape1 steps(5, start) infinite forwards;
+}
+.glitch-shape2{    
+  background-color: rgb(0, 204, 51);
+  position:absolute;
+  width: 100px;
+  height: 500px;
+  opacity: 0.85;
+  animation: 2s glitchshape2 steps(5, start) infinite forwards reverse;
+}
+.glitch-shape3{    
+  background-color: cyan;
+  position:absolute;
+  width: 979px;
+  height: 24px;
+  opacity: 0.85;
+  animation: 1s glitchshape3 linear infinite forwards;
+}
+.glitch-shape4{    
+  background-color: blue;
+  position:absolute;
+  width: 2000px;
+  height: 40px;
+  transform:translate(-100px, 30px);
+}
+.glitch-shape5{    
+  background-color: black;
+  position:absolute;
+  width: 525px;
+  height: 92px;
+  transform:translate(20px, 500px);
+}
+
+@keyframes glitchshape1 {
+  0% 	{background-color:#70fdee; width:1000px;height:300px;transform:translate(690px, 49px)}
+  25%	{background-color: #cb3d24; width:540px;height:1049px;transform:translate(-355px, -1380px)}
+  50%	{background-color: #1abf35; width:68px;height:456px;transform:translate(880px, 936px)}
+  75%	{background-color: #f2952c; width:1078px;height:366px;transform:translate(314px, -330px)}
+  100%	{background-color: #3a9e8d; width:816px;height:1196px;transform:translate(-1020px,
+361px)}
+}
+
+@keyframes glitchshape2 {
+  0% 	{background-color: #5059ab; width:663px;height:1199px;transform:translate(489px,207px)}
+  25%	{background-color: #dc1b02; width:1220px;height:300px;transform:translate(-95px, 345px)}
+  50%	{background-color: #ef2556; width:723px;height:938px;transform:translate(1195px, 614px)}
+  75%	{background-color: #e3bcc0; width:1238px;height:508px;transform:translate(1200px, -106px)}
+  100%	{background-color: #f266a4; width:68px;height:456px;transform:translate(-20px, 669px)}
+}
+@keyframes glitchshape3 {
+  0% 	{transform:translate(900px, 800px)}
+  100%	{transform:translate(1000px,800px)}
+}
+
+.filmgrain{
+    position: absolute;
+  top: -500px;
+  right: -500px;
+  bottom: -500px;
+  left: -500px;
+  z-index: -1;
+  background: transparent url("https://youhavefoundconey.net/CG/what/assets/img/filmgrain.gif") 0 0;
+  background-size: 1000px;
+  opacity: 0.25;
+  overflow: hidden
+}
+
+.imgfadeout{
+	animation: 6.5s imgfadeout ease 1 forwards;
+}
+
+@keyframes imgfadeout {
+  0% 	{ opacity: 1; }
+  100%	{ opacity: 0; }
+}
+
+@keyframes bgfadeout {
+  0% 	{ background-color: rgba(255, 255, 255, 1) }
+  100%	{ background-color: rgba(255, 255, 255, 0) }
+}
+
+@keyframes bgfadein {
+  0% 	{ background-color: rgba(255, 255, 255, 0) }
+  100%	{ background-color: rgba(255, 255, 255, 1) }
+}
+
+.whitebgfadein{    
+  background-color: white;
+    position:absolute;
+	top:3%;
+  	bottom:3%;
+  	left:2%;
+  	right:2%;
+  z-index: 1;
+  animation: 6.5s bgfadein ease 1 forwards;
+}
+
+.whitebgfadeout{    
+  background-color: white;
+    position:absolute;
+	top:3%;
+  	bottom:3%;
+  	left:2%;
+  	right:2%;
+  z-index: 1;
+  animation: 6.5s bgfadeout ease 1 forwards;
+}
+
+
+
+.psa{
+  font-family: 'SpecialElite', sans-serif;
+	font-size: 20px;
+  font-weight: 500;
+	color: white;
+  background-color:transparent;
+}
+
+.psalogobright{
+    position:absolute;
+  	top: 50%;
+   left: 50%;
+   width: 750px;
+   height: 750px;
+   margin-top: -375px; /* Half the height */
+   margin-left: -375px; /* Half the width */
+  filter: brightness(100%);
+   	z-index: -1;
+}
+
+.psalogodark{
+    position:absolute;
+  	top: 50%;
+   left: 50%;
+   width: 750px;
+   height: 750px;
+   margin-top: -375px; /* Half the height */
+   margin-left: -375px; /* Half the width */
+  filter: brightness(27%);
+   	z-index: -2;
+}
+
+.psabg{
+  background-image: url(https://youhavefoundconey.net/CG/what/assets/img/coneybg_dark.jpg);  
+    position:absolute;
+	top:0%;
+  	bottom:0%;
+  	left:0%;
+  	right:0%;
+  z-index: -10;
+}
+
+.normal{
+  font-family: 'SpecialElite', sans-serif;
+	font-size: 25px;
+  font-weight: 500;
+	color: black;
+  /*background-color:white;
+  background-blend-mode: normal;*/
+}
+.whitebg{    
+  background-color: white;
+    position:absolute;
+	top:3%;
+  	bottom:3%;
+  	left:2%;
+  	right:2%;
+  z-index: -3;
+}
+.blackbg{    
+  background-color: black;
+    position:absolute;
+	top:0%;
+  	bottom:0%;
+  	left:0%;
+  	right:0%;
+}
+.glitchwhitebg{    
+  background-color: white;
+    position:absolute;
+	top:3%;
+  	bottom:3%;
+  	left:2%;
+  	right:2%;
+  z-index: -3;
+  animation: 0.1s bgglitch linear infinite forwards;
+}
+
+.whitebgfadein{    
+  background-color: white;
+    position:absolute;
+	top:3%;
+  	bottom:3%;
+  	left:2%;
+  	right:2%;
+  z-index: 1;
+  animation: 6.5s bgfadein ease 1 forwards;
+}
+
+.whitebgfadeout{    
+  background-color: white;
+    position:absolute;
+	top:3%;
+  	bottom:3%;
+  	left:2%;
+  	right:2%;
+  z-index: 1;
+  animation: 6.5s bgfadeout ease 1 forwards;
+}
+
+.coneylogoglitch{
+	position:absolute;
+    width: 529px;
+  opacity: 0.85;
+	transform:translate(80px, 0px);
+	 animation: 1s logoglitch linear infinite both;
+}
+
+.filmgrain{
+    position: absolute;
+  top: -500px;
+  right: -500px;
+  bottom: -500px;
+  left: -500px;
+  z-index: -1;
+  background: transparent url(https://youhavefoundconey.net/CG/what/assets/img/filmgrain.gif) 0 0;
+  background-size: 1000px;
+  opacity: 0.25;
+  overflow: hidden
+}
+
+.glitch-shape1{    
+  background-color: cyan;
+  position:absolute;
+  width: 100px;
+  height: 500px;
+  opacity: 0.85;
+  animation: 2s glitchshape1 steps(5, start) infinite forwards;
+}
+.glitch-shape2{    
+  background-color: rgb(0, 204, 51);
+  position:absolute;
+  width: 100px;
+  height: 500px;
+  opacity: 0.85;
+  animation: 2s glitchshape2 steps(5, start) infinite forwards reverse;
+}
+.glitch-shape3{    
+  background-color: cyan;
+  position:absolute;
+  width: 979px;
+  height: 24px;
+  opacity: 0.85;
+  animation: 1s glitchshape3 linear infinite forwards;
+}
+.glitch-shape4{    
+  background-color: blue;
+  position:absolute;
+  width: 2000px;
+  height: 40px;
+  transform:translate(-100px, 30px);
+}
+.glitch-shape5{    
+  background-color: black;
+  position:absolute;
+  width: 525px;
+  height: 92px;
+  transform:translate(20px, 500px);
+}
+
+@keyframes bgglitch {
+  0% 	{transform:translate(0px, 0px)}
+  100%	{transform:translate(-20px,20px)}
+}
+
+@keyframes logoglitch {
+  0% 		{width:590px;transform:translate(60px, 40px)}
+  49.999%	{width:590px;transform:translate(60px, 40px)}
+  50%		{width:300px;transform:translate(500px, 0px)}
+  54.999%	{width:300px;transform:translate(500px, 0px)}
+  55%		{width:590px;transform:translate(60px, 40px)}
+  94.999%	{width:590px;transform:translate(60px, 40px)}
+  95%		{width:300px;transform:translate(500px, 0px)}
+  99.999%	{width:300px;transform:translate(500px, 0px)}
+  100%		{width:590px;transform:translate(60px, 40px)}
+}
+
+@keyframes glitchshape1 {
+  0% 	{background-color:#70fdee; width:1000px;height:300px;transform:translate(690px, 49px)}
+  25%	{background-color: #cb3d24; width:540px;height:1049px;transform:translate(-355px, -1380px)}
+  50%	{background-color: #1abf35; width:68px;height:456px;transform:translate(880px, 936px)}
+  75%	{background-color: #f2952c; width:1078px;height:366px;transform:translate(314px, -330px)}
+  100%	{background-color: #3a9e8d; width:816px;height:1196px;transform:translate(-1020px,
+361px)}
+}
+
+@keyframes glitchshape2 {
+  0% 	{background-color: #5059ab; width:663px;height:1199px;transform:translate(489px,207px)}
+  25%	{background-color: #dc1b02; width:1220px;height:300px;transform:translate(-95px, 345px)}
+  50%	{background-color: #ef2556; width:723px;height:938px;transform:translate(1195px, 614px)}
+  75%	{background-color: #e3bcc0; width:1238px;height:508px;transform:translate(1200px, -106px)}
+  100%	{background-color: #f266a4; width:68px;height:456px;transform:translate(-20px, 669px)}
+}
+@keyframes glitchshape3 {
+  0% 	{transform:translate(900px, 800px)}
+  100%	{transform:translate(1000px,800px)}
+}
+
+.logoToGlitch {
+  width: 9rem;
+}
+
+.message-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+    gap: 1rem;
+}
+
+.message-container{
+ background-color: #fff;
+    /* background: url(http://remote.co.com/UCA/assets/img/paperbackground.jpg); */
+    padding: 1.5rem;
+    color: black;
+    flex-grow: 1;
+   border-radius: 10px 10px 10px 0;
+    flex-grow:1
+  }
+
+.message-circle{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: white;
+    border-radius: 50%;
+}
+/* //////// */
+
+input[type="text"] {
+  text-align: center;
+ 	color: black;
+	background-color: white;
+}
+input[type="text"]:hover {
+  text-align: center;
+	color: white;	
+  	background-color: black;
+}
+input[type="text"]:focus{
+  text-align: center;
+	color: white;	
+  	background-color: black;
+}
+
+.biginput input[type="text"] {
+  text-align: center;
+ 	color: #9900ff;
+  background-color: black;
+  font-size: 35px;
+}
+.biginput input[type="text"]:hover {
+  text-align: center;
+	color: black;	
+  	background-color: #9900ff;
+  font-size: 35px;
+}
+.biginput input[type="text"]:focus{
+  text-align: center;
+	color: #9900ff;	
+  	background-color: black;
+  font-size: 35px;
+}
+
+.center-fit { 
+    display: block;
+  height:auto; 
+  width:auto; 
+    margin-left: auto;
+  margin-right: auto;
+  max-height:100%;
+  max-width:90%;
+}
+
+.voice-text{
+  font-size: 30px;
+  text-align: center;
+}
+
+.normal button {
+   background-color: white;
+  color: black;
+  border: 2.5px solid black;
+	border-radius: 2px;
+}
+.normal button:hover{
+color: white;
+  background-color:black;
+}
+
+.psa button {
+   background-color: black;
+  color: white;
+  border: 2.5px solid white;
+	border-radius: 2px;
+}
+
+.psa button:hover{
+color: black;
+  background-color:white;
+}
+
+.frontButton button{
+   background-color: black;
+  color: #9900ff;
+  border: 2.5px solid #9900ff;
+	border-radius: 15px;
+}
+
+.frontButton button:hover{
+color: black;
+  background-color: #9900ff;
+}
+
+@keyframes bgfadein {
+  0% 	{ background-color: rgba(255, 255, 255, 0) }
+  100%	{ background-color: rgba(255, 255, 255, 1) }
+}
+
+@keyframes bgfadeout {
+  0% 	{ background-color: rgba(255, 255, 255, 1) }
+  100%	{ background-color: rgba(255, 255, 255, 0) }
+}
+
+.imgfadein{
+	animation: 6.5s imgfadein ease 1 forwards;
+}
+
+.imgfadeout{
+	animation: 6.5s imgfadeout ease 1 forwards;
+}
+
+.imgfadeinfast{
+	animation: 2s imgfadein ease 1 forwards;
+}
+
+.imgfadeoutfast{
+	animation: 2s imgfadeout ease 1 forwards;
+}
+
+.imgfadeinhalf{
+      position:absolute;
+  	top: 50%;
+   left: 50%;
+   width: 750px;
+   height: 750px;
+   margin-top: -375px; /* Half the height */
+   margin-left: -375px; /* Half the width */
+  filter: brightness(27%);
+   	z-index: -1;
+	animation: 2s imgfadeinhalf ease 1 both;
+}
+
+.imgfadeouthalf{
+      position:absolute;
+  	top: 50%;
+   left: 50%;
+   width: 750px;
+   height: 750px;
+   margin-top: -375px; /* Half the height */
+   margin-left: -375px; /* Half the width */
+  filter: brightness(100%);
+   	z-index: -1;
+	animation: 2s imgfadeouthalf ease 1 both;
+}
+
+
+@keyframes imgfadein {
+  0% 	{ opacity: 0; }
+  100%	{ opacity: 1; }
+}
+
+@keyframes imgfadeout {
+  0% 	{ opacity: 1; }
+  100%	{ opacity: 0; }
+}
+
+@keyframes imgfadeinhalf {
+  0% 	{ filter: brightness(27%); }
+  100%	{ filter: brightness(100%); }
+}
+@keyframes imgfadeouthalf {
+  0% 	{ filter: brightness(100%); }
+  100%	{ filter: brightness(27%); }
+}
+
+.delete-effect{
+animation: .8s delete infinite alternate;
+  animation-fill-mode: both;
+}
+
+@keyframes delete {
+  0% { transform: skewX(-15deg); filter:drop-shadow(-5px -20px 0px blue);}
+  10% { transform: skewY(-5deg); filter:drop-shadow(-10px 10px 0px lime);}
+  20% { transform: skewX(-15deg); filter:drop-shadow(8px 10px 0px red);}
+  30% { transform: skewY(10deg);filter:drop-shadow(-10px 10px 0px lime);}
+  40% { transform: skewX(-20deg); filter:drop-shadow(-5px -20px 0px blue);}
+  50% { transform: skewX(15deg); filter:drop-shadow(8px 10px 0px red);}
+  60% { transform: skewX(-15deg); filter:drop-shadow(-5px -20px 0px lime);}
+  70% { transform: skewY(-5deg); filter:drop-shadow(-10px 10px 0px blue);}
+  80% { transform: skewX(-15deg); filter:drop-shadow(8px 10px 0px red);}
+  90% { transform: skewY(10deg);filter:drop-shadow(-10px 10px 0px lime);}
+  100% { transform: skewX(15deg); filter:drop-shadow(8px 10px 0px red);}
+}
+
+.noise {
+  position: absolute;
+  top: -500px;
+  right: -500px;
+  bottom: -500px;
+  left: -500px;
+  z-index: 10;
+  background: transparent url(https://youhavefoundconey.net/CG/what/assets/img/noise.png) 0 0;
+  background-size: 320px 320px;
+	opacity: .75;
+	animation: noise 1s steps(8,end) infinite both;
+}
+
+@keyframes noise {
+  0% {
+    transform: translateX(0px,0px); }
+  10% {
+    transform: translate(-100px, 100px);
+  }
+  20% {
+    transform: translate(150px, -100px);
+  }
+  30% {
+    transform: translate(-100px,100px);
+  }
+  40% {
+    transform: translate(100px, -150px);
+  }
+  50% {
+    transform: translate(-100px, 200px);
+  }
+  60% {
+    transform: translate(-200px, -100px);
+  }
+  70% {
+    transform: translateY(50px, 100px);
+  }
+  80% {
+    transform: translate(100px, -150px);
+  }
+  90% {
+    transform: translate(0px, 200px);
+  }
+  100% {
+    transform: translate(-100px, 100px);
+  }
+}
+
+
+
+:: Story JavaScript [script]
+$('#ui-bar').remove();
+$(document.head).find('#style-ui-bar').remove();
+
+!function() {
+    postrender.typewriter = function (b) {
+        if (this.tags) {
+            var r = new RegExp("t8n.typewriter.([0-9]+)(?:[^0-9]|$)","g");
+            var t = r.exec(this.tags.toString());
+            if (t) {
+                typeout(b, t[1]+0);
+            }
+        }
+        return b;
+    };
+    var typeout = function(c,t) {
+        var Furl = function(current) {
+            this.n = current;
+            this.out = false;
+            this.data = current.nodeValue;
+            current.nodeValue = "";
+            this.kids = [];
+            var cn = current.childNodes;
+            if (current.style && current.style.display=="none") {
+                return;
+            }
+            while (cn.length>0) {
+                var f = new Furl(cn[0]);
+                current.removeChild(cn[0]);
+                f.out = true;this.kids.push(f);
+            }
+        };
+        var nodes = new Furl(c);
+        var unfurl = function(furled,d) {
+            var n = furled.n;
+            if (furled.out) {
+                d.appendChild(n);
+                furled.out = false;
+            }
+            if (furled.data) {
+                n.nodeValue += furled.data[0];
+                furled.data = furled.data.slice(1);
+                return true;
+            }
+            for (var j=0; j<furled.kids.length; j++) {
+                var ret = unfurl(furled.kids[j],n);
+                if (ret) {
+                    return true;
+                }
+            }
+            return false;
+        };
+        var title = passage();
+        var intr = setInterval (
+            function() {
+                if (passage() == title && unfurl(nodes,null)) {
+                    return;
+                }
+                clearInterval(intr);
+            }
+        ,t);
+    };
+}();
+
+:: StoryInit
+<<cacheaudio "badjoke" "https://youhavefoundconey.net/CG/what/assets/audio/badjoke.mp3">>
+<<cacheaudio "tourescape" "https://youhavefoundconey.net/CG/what/assets/audio/tourescape.mp3">>
+<<cacheaudio "Alex1" "./assets/audio/Alex1.mp3">>
+<<cacheaudio "Alex2" "./assets/audio/Alex2.mp3">>
+<<cacheaudio "Alexandrina1" "./assets/audio/Alexandrina1.mp3">>
+<<cacheaudio "Alexandrina2" "./assets/audio/Alexandrina2.mp3">>
+<<cacheaudio "House1" "./assets/audio/House1.mp3">>
+<<cacheaudio "House2" "./assets/audio/House2.mp3">>
+<<cacheaudio "House3" "./assets/audio/House3.mp3">>
+<<cacheaudio "maria1" "./assets/audio/maria1.mp3">>
+<<cacheaudio "Plant1" "./assets/audio/Plant1.mp3">>
+<<cacheaudio "Plant2" "./assets/audio/Plant2.mp3">>
+<<cacheaudio "Plant3" "./assets/audio/Plant3.mp3">>
+<<cacheaudio "Plant4" "./assets/audio/Plant4.mp3">>
+<<cacheaudio "Priscilla1" "./assets/audio/Priscilla1.mp3">>
+<<cacheaudio "Priscilla2" "./assets/audio/Priscilla2.mp3">>
+<<waitforaudio>>
+
+
+:: landing {"position":"425,75","size":"100,100"}
+<main class="landing">
+<div class="landing-wrapper">
+    
+          <<button "Start">><<goto "1">><</button>>
+</div>
+</main>     
+      
+
+
+
+
+
+:: 1  [t8n.typewriter-4]{"position":"425,200","size":"100,100"} 
+<main class="main-section"><p>Welcome to the Playtest
+
+This is a project that has been made over this week with local young people here in Wisbech about connecting to this space. 
+
+It uses your phone, and you may want to put your phone volume up
+    
+<<timed 13s>><<goto "2">><</timed>>
+</p>
+
+</main>
+
+::  2 [t8n.typewriter-4]{"position":"425,325","size":"100,100"}
+<main class="main-section"><p>This is an early version of this game - which is why we are asking you to play it and let us know what you think. 
+  
+  Some of the text you’ll need to read out - and some will come through as audio. 
+  
+  You’ll need to click Next sometimes
+  
+   <<timed 9s>><<button "Next">> <<goto "3">><</button>><</timed>>
+</p>
+</main>    
+
+::  3  [t8n.typewriter-4]{"position":"425,450","size":"100,100"}
+<main class="main-section">
+Perfect. 
+
+Shall we begin? 
+
+ <<timed 2s>><<button "Yes">> <<goto "4">><</button>><</timed>>
+
+</main>
+
+::  4  [t8n.typewriter-4]{"position":"425,450","size":"100,100"}
+<main class="main-section">
+
+<<audio "House1" play>>
+<div id ="audioMount">audio playing...</div>
+
+<<timed 55s>><<replace "#audioMount">><<button "Next">> <<goto "House">><</button>><</replace>><</timed>>
+
+</main>
+
+/* ::  4  [t8n.typewriter-4]{"position":"425,450","size":"100,100"}
+<main class="main-section">
+
+<<audio "House1" play>>
+Hello, I am Peckover House
+
+I know, it is odd to hear from a house, but I am. 
+
+I’ve decided to open for you
+
+Because you are welcome here.
+
+<<timed 5s>><<goto "5">><</timed>>
+
+</main> */
+
+/* ::  5  [t8n.typewriter-4]{"position":"425,450","size":"100,100"}
+<main class="main-section">
+But I do worry you don’t feel welcome here 
+
+That you don’t feel this place is for you
+
+That you feel I am closed to you
+
+<<timed 5s>><<goto "6">><</timed>>
+
+</main> */
+
+/* ::  6  [t8n.typewriter-4]{"position":"425,450","size":"100,100"}
+<main class="main-section">
+
+But I want that to change
+
+<<timed 5s>><<goto "7">><</timed>>
+
+</main> */
+
+/* ::  7  [t8n.typewriter-4]{"position":"425,450","size":"100,100"}
+<main class="main-section">
+
+I’m 300 years old this year if you didn’t know
+
+I know, I don’t look it. 
+
+<<timed 5s>><<goto "8">><</timed>>
+
+</main> */
+
+/* ::  8  [t8n.typewriter-4]{"position":"425,450","size":"100,100"}
+<main class="main-section">
+
+So, I am going to make some changes
+
+But I need your help to make them
+
+And maybe if we can make them together
+
+We can celebrate my birthday together
+
+
+<<timed 5s>><<goto "9">><</timed>>
+
+</main> */
+
+/* ::  9  [t8n.typewriter-4]{"position":"425,450","size":"100,100"}
+<main class="main-section">
+
+I think I know how to do it
+
+Where do you want to go first?
+
+<<timed 5s>><<goto "House">><</timed>>
+
+</main> */
+
+
+
+:: House  [t8n.typewriter-4]{"position":"425,450","size":"100,100"}
+<main class="main-section">
+<img src="./assets/img/house.png" class="housemap">
+Click on the area you want to go to. 
+
+You can do these in any order. 
+
+
+<<button [[Garden]]>><<goto "Garden">><</button>>
+<<button [[Dining Room]]>><<goto "Dining Room">><</button>>
+<<button [[Bedroom]]>><<goto "Bedroom">><</button>>
+</main>
+
+:: HouseBasement  [t8n.typewriter-4]{"position":"425,450","size":"100,100"}
+<main class="main-section">
+<img src="./assets/img/housebasement.png" class="housemap">
+
+<<button [[Basement]]>><<goto "Basement">><</button>>
+</main>
+
+:: HouseBasementCode
+<main class="main-section">
+<img src="./assets/img/housebasement.png" class="housemap">
+Enter the codeword:
+
+
+
+
+
+
+<div id="coderesult"></div>
+ \/% CODEWORD FEEDBACK %/
+\   <div id="resultbutton">
+\/% CODEWORD INPUT %/
+\<div class="css-input code-input">\
+<<textbox "$housecode" "">></div>
+<<button "Enter">>
+</div>
+</main>
+ \/% PASSWORD CODE %/
+ <<set $housecode to $housecode.toUpperCase()>>
+      \
+\/% CODEWORD CORRECT %/
+<<if $housecode isnot "" and $housecode is "BIRTHDAY">>
+<<replace "#coderesult">>CORRECT<</replace>>
+<<timed 3s>><<goto [[end1]]>><</timed>>
+<</if>>
+\/% CODEWORD INCORRECT %/
+<<if $housecode isnot "" and $housecode is not "BIRTHDAY">>
+<<replace "#coderesult">>Thats not right.<</replace>>
+<<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+<</if>><</button>>
+</div>
+</main>
+
+
+:: Bedroom [t8n.typewriter-4]
+<main class="main-section">
+Walk up to the bedroom - at the top of the stairs, to the left. 
+
+Knock three times - but quietly! There’s a 97 year old inside… her name is Priscilla Peckover. 
+
+Now open the door… slowly, slowly. 
+
+When in, click <<button "Next">> <<goto "3">><</button>>
+
+<<timed 5s>><<goto "4">><</timed>>
+</main>
+
+
+:: Garden  [t8n.typewriter-4]
+<main class="main-section">
+When outside in the garden, click below to hear from Alexander.
+
+<<button "Click me">><<goto "g1">><</button>>
+
+<div id="btnMount"></div>
+
+</main>
+
+
+
+:: Dining Room [t8n.typewriter-4]
+<main class="main-section">
+Inside the house, on the ground floor you’ll need to head to the original front door. 
+
+As you look at the front door, take the door to the right, it’s the Dining Room. 
+
+It’s time to find Alexandrina
+
+<<timed 7s>><<goto "dr1">><</timed>>
+</main>
+
+:: Basement [t8n.typewriter-4]
+<main class="main-section">
+Head to the staircase inside
+It’s time to go downstairs
+When at the bottom of the stairs click below
+
+<<button "READY">><<goto "bs1">><</button>>
+</main>
+
+
+:: dr1 [t8n.typewriter-4]
+<main class="main-section">
+
+<<audio "Alexandrina1" play>>
+<div id ="audioMount">audio playing...</div>
+
+<<timed 25s>><<replace "#audioMount">><<button "Next">> <<goto "dr4">><</button>><</replace>><</timed>>
+
+</main>
+
+/* :: dr1
+<main class="main-section">
+
+Oh hello there. 
+
+Now I know you can see me. Very good. I won’t talk. No. I rarely speak my thoughts aloud. 
+
+<<timed 7s>><<goto "dr2">><</timed>>
+</main> */
+
+/* :: dr2
+<main class="main-section">
+
+Shh.
+
+Just because you’ve come to evacuate yourself from the war doesn’t mean you can make a ruckus now. 
+
+<<timed 7s>><<goto "dr3">><</timed>>
+</main> */
+
+/* :: dr3
+<main class="main-section">
+
+Now. I know many people have said that I’m stern in the past. 
+
+It is true. I rarely smile. 
+
+I’m far too busy for any of that nonsense, I have much more important work to do.
+
+
+<<timed 7s>><<goto "dr4">><</timed>>
+</main> */
+
+:: dr4 [t8n.typewriter-4]
+<main class="main-section">
+/* TWINE VOICE  */
+
+She seems quite stern
+Perhaps we can make her smile?
+Look at the diary entries
+They were the key to Alexandrina’s inner world
+
+Maybe if you find the word for her favourite cat, we can help her reconnect to herself. 
+
+<div id="coderesult"></div>
+ \/% CODEWORD FEEDBACK %/
+\   <div id="resultbutton">
+\/% CODEWORD INPUT %/
+\<div class="css-input code-input">\
+<<textbox "$favcat" "">></div>
+<<button "Enter">>
+</div>
+ \/% PASSWORD CODE %/
+      \ <<set $favcat to $favcat.toUpperCase()>>
+      \
+\/% CODEWORD CORRECT %/
+<<if $favcat isnot "" and $favcat is "REBELLION">>
+<<replace "#coderesult">>CORRECT<</replace>>
+<<timed 3s>><<goto [[dr5]]>><</timed>>
+<</if>>
+\/% CODEWORD INCORRECT %/
+<<if $favcat isnot "" and $favcat is not "REBELLION">>
+<<replace "#coderesult">>Thats not right.<</replace>>
+<<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+<</if>><</button>>
+
+</main>
+
+:: dr5 [t8n.typewriter-4]
+<main class="main-section">
+<<audio "Alexandrina2" play>>
+<div id ="audioMount">audio playing...</div>
+
+<<timed 40s>><<replace "#audioMount">><<button "Next">> <<goto "House">><</button>><</replace>><</timed>>
+</main>
+
+/* :: dr6
+<main class="main-section">
+
+The first woman and cat team duo! Now I know that’s not what is expected of a lady, but I was never one to follow the rules. 
+
+Maybe at the party later… you can also write your daydreams in my diary…. I think I left it in there….. 
+
+Thank you for helping me remember Ginger. 
+
+
+<<timed 10s>><<goto "dr4">><</timed>>
+</main> */
+
+
+:: b1 [t8n.typewriter-4]
+<main class="main-section">
+<<audio "Priscilla1" play>>
+<div id ="audioMount">audio playing...</div>
+
+<<timed 50s>><<replace "#audioMount">><<button "Next">> <<goto "b2">><</button>><</replace>><</timed>>
+
+</main>
+
+:: b2 [t8n.typewriter-4]
+<main class="main-section">
+/* ADD AUDIO */
+Look for a way to help Priscilla remember her word. 
+We need to find out what the word TUGAB means in her language. 
+
+<div id="coderesult"></div>
+ \/% CODEWORD FEEDBACK %/
+\   <div id="resultbutton">
+\/% CODEWORD INPUT %/
+\<div class="css-input code-input">\
+<<textbox "$novel" "">></div>
+<<button "Enter">>
+</div>
+</main>
+ \/% PASSWORD CODE %/
+      \ <<set $codeword to $codeword.toUpperCase()>>
+      \
+\/% CODEWORD CORRECT %/
+<<if $novel isnot "" and $novel is "NOVEL">>
+<<replace "#coderesult">>CORRECT<</replace>>
+<<timed 3s>><<goto [[b3]]>><</timed>>
+<</if>>
+\/% CODEWORD INCORRECT %/
+<<if $novel isnot "" and $novel is not "NOVEL">>
+<<replace "#coderesult">>Thats not right.<</replace>>
+<<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+<</if>><</button>>
+</main>
+
+:: b3 [t8n.typewriter-4]
+<main class="main-section">
+<<audio "Priscilla2" play>>
+<div id ="audioMount">audio playing...</div>
+
+<<timed 50s>><<replace "#audioMount">><<button "Next">> <<goto "House">><</button>><</replace>><</timed>>
+</main>
+
+
+:: g1 [t8n.typewriter-4]
+<main class="main-section"><<audio "Alex1" play>><div id ="audioMount">audio playing...</div>
+
+<<timed 15s>><<replace "#audioMount">><<button "Next">> <<goto "g1a">><</button>><</replace>><</timed>>
+</main>
+
+:: g1a [t8n.typewriter-4]
+<main class="main-section">First, we need to find my prickly friend
+
+With your back to the house, you’ll head to the left. 
+My riddle is my puzzle & my trickiness to climb
+
+Send me the latin name of the tree - I do like latin. 
+
+<div id="coderesult"></div>
+ \/% CODEWORD FEEDBACK %/
+\   <div id="resultbutton">
+\/% CODEWORD INPUT %/
+<div class="css-input code-input">
+<<textbox "$treename" "">></div>
+<<button "Enter">>
+</div>
+ /% PASSWORD CODE %/
+  <<set $treename to $treename.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $treename isnot "" and $treename is "ARAUCANA">>
+<<replace "#coderesult">>CORRECT<</replace>>
+<<timed 3s>><<goto [[g2]]>><</timed>>
+<</if>>
+\/% CODEWORD INCORRECT %/
+<<if $treename isnot "" and $treename is not "ARAUCANA">>
+<<replace "#coderesult">>Thats not right.<</replace>>
+<<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+<</if>><</button>>
+</div>
+</main>
+
+
+:: g2 [t8n.typewriter-4]
+<main class="main-section">
+<<audio "Plant1" play>><div id ="audioMount">audio playing...</div>
+<<timed 15s>><<replace "#audioMount">><<button "Next">> <<goto "g3">><</button>><</replace>><</timed>>
+</main>
+/* Aracucan - A Monkey Puzzle - a conifer older than me. Origins in Chile. I hope to visit one day.  */
+
+:: g3 [t8n.typewriter-4]
+<main class="main-section">
+Next up, head towards the Orangery
+I fancy a drink to quench my thirst - maybe a squeeze of that citrus burst
+
+<div id="coderesult"></div>
+ \/% CODEWORD FEEDBACK %/
+\   <div id="resultbutton">
+\/% CODEWORD INPUT %/
+\<div class="css-input code-input">\
+<<textbox "$drink" "">></div>
+<<button "Enter">>
+</div>
+</main>
+ \/% PASSWORD CODE %/
+      \ <<set $drink to $drink.toUpperCase()>>
+      \
+\/% CODEWORD CORRECT %/
+<<if $drink isnot "" and $drink is "SINESIS">>
+<<replace "#coderesult">>CORRECT<</replace>>
+<<timed 3s>><<goto [[g4]]>><</timed>>
+<</if>>
+\/% CODEWORD INCORRECT %/
+<<if $drink isnot "" and $drink is not "SINESIS">>
+<<replace "#coderesult">>Thats not right.<</replace>>
+<<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+<</if>><</button>>
+</div>
+</main>
+
+:: g4 [t8n.typewriter-4]
+<main class="main-section">
+<<audio "Plant2" play>><div id ="audioMount">audio playing...</div>
+<<timed 8s>><<replace "#audioMount">><<button "Next">> <<goto "g5">><</button>><</replace>><</timed>>
+</main>
+/* Orange Trees - These trees are as old as the house you know, 300 years old, and given to us by a local estate. */
+
+:: g5 [t8n.typewriter-4]
+<main class="main-section">
+/* ADD AUDIO */
+Ahead is the path, along the wall
+Past the buzz along the secret path
+You’ll find the trunk of faces
+Next to the Black Sunburst. 
+
+<div id="coderesult"></div>
+ \/% CODEWORD FEEDBACK %/
+\   <div id="resultbutton">
+\/% CODEWORD INPUT %/
+\<div class="css-input code-input">\
+<<textbox "$ginko" "">></div>
+<<button "Enter">>
+</div>
+</main>
+ \/% PASSWORD CODE %/
+      \ <<set $ginko to $ginko.toUpperCase()>>
+      \
+\/% CODEWORD CORRECT %/
+<<if $ginko isnot "" and $ginko is "GINKO">>
+<<replace "#coderesult">>CORRECT<</replace>>
+<<timed 3s>><<goto [[g6]]>><</timed>>
+<</if>>
+\/% CODEWORD INCORRECT %/
+<<if $ginko isnot "" and $ginko is not "GINKO">>
+<<replace "#coderesult">>Thats not right.<</replace>>
+<<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+<</if>><</button>>
+</div>
+</main>
+
+:: g6 [t8n.typewriter-4]
+<main class="main-section">
+<<audio "Plant3" play>><div id ="audioMount">audio playing...</div>
+<<timed 10s>><<replace "#audioMount">><<button "Next">> <<goto "g7">><</button>><</replace>><</timed>>
+</main>
+/* Gingko - yet another conifer and known more often as Maidenhair, it’s leaves are flat and broad, not needles. I would often collect them to fold them up as Origami.   */
+
+:: g7 [t8n.typewriter-4]
+<main class="main-section">
+/* ADD AUDIO */
+Continue along the wilderness, past the locked door. 
+
+Check the trunks as you go
+
+To find what the Lirdoendron has in store. 
+
+<div id="coderesult"></div>
+ \/% CODEWORD FEEDBACK %/
+\   <div id="resultbutton">
+\/% CODEWORD INPUT %/
+\<div class="css-input code-input">\
+<<textbox "$tulip" "">></div>
+<<button "Enter">>
+</div>
+</main>
+ \/% PASSWORD CODE %/
+      \ <<set $tulip to $tulip.toUpperCase()>>
+      \
+\/% CODEWORD CORRECT %/
+<<if $tulip isnot "" and $tulip is "TULIPIFERA">>
+<<replace "#coderesult">>CORRECT<</replace>>
+<<timed 3s>><<goto [[g8]]>><</timed>>
+<</if>>
+\/% CODEWORD INCORRECT %/
+<<if $tulip isnot "" and $tulip is not "TULIPIFERA">>
+<<replace "#coderesult">>Thats not right.<</replace>>
+<<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+<</if>><</button>>
+</div>
+</main>
+
+:: g8
+<main class="main-section">
+<<audio "Plant4" play>><div id ="audioMount">audio playing...</div>
+<<timed 18s>><<replace "#audioMount">><<button "Next">> <<goto "g9">><</button>><</replace>><</timed>>
+</main>
+/* Tulip Tree, named after it’s glorious flowers. It’s a shame it’s not in bloom. It’s my favourite time of the year in the garden. I ’m starting to remember…When I was but a boy, I loved to explore these grounds, roam the garden I would someday inherit. */
+
+:: g9
+<main class="main-section">
+<<audio "Alex2" play>><div id ="audioMount">audio playing...</div>
+<<timed 50s>><<replace "#audioMount">><<button "Next">> <<goto "final">><</button>><</replace>><</timed>>
+</main>
+/* I’ve heard stories of plant hunters, exotic flowers, far away lands and I yearn to travel and explore. I wish I could see the beauty I have heard of in my books, maybe one day. 
+ 
+Seeing frogs and making origami versions
+ 
+My siblings don’t understand, ex cept for Pricilla. She knows exactly what I’m talking about. We both yearn for a world outside Wisbech, a world outside books and banking.  A world where I don’t have to imagine a different fate for myself.
+ 
+It’s funny, when you get older you have so many responsibilities
+So many things you have to DO. 
+But it is nice to just be here with you. 
+With the plants
+Maybe one day I’ll be a Plant Hunter.  */
+
+
+:: final [t8n.typewriter-4]
+<main class="main-section">
+You collected all three Peckover stories.
+That must be the codeword to unlock the celebration
+Enter Peckover below. 
+
+<div id="coderesult"></div>
+ \/% CODEWORD FEEDBACK %/
+\   <div id="resultbutton">
+\/% CODEWORD INPUT %/
+\<div class="css-input code-input">\
+<<textbox "$password" "">></div>
+<<button "Enter">>
+</div>
+</main>
+ \/% PASSWORD CODE %/
+      \ <<set $password to $password.toUpperCase()>>
+      \
+\/% CODEWORD CORRECT %/
+<<if $password isnot "" and $password is "PECKOVER">>
+<<replace "#coderesult">>CORRECT<</replace>>
+<<timed 3s>><<goto [[house2]]>><</timed>>
+<</if>>
+\/% CODEWORD INCORRECT %/
+<<if $password isnot "" and $password is not "PECKOVER">>
+<<replace "#coderesult">>Thats not right.<</replace>>
+<<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+<</if>><</button>>
+</div>
+</main>
+
+
+
+:: house2 [t8n.typewriter-4]
+<main class="main-section">
+<<audio "House2" play>><div id ="audioMount">audio playing...</div>
+<div class="filmgrain"></div>
+<div class="glitch-shape1"></div>
+<div class="glitch-shape2"></div>
+<div class="glitch-shape3"></div>
+
+<<timed 40s>><<replace "#audioMount">><<button "Next">> <<goto "HouseBasement">><</button>><</replace>><</timed>>
+</main>
+/* Ahhhhh, I thought that was it
+To open the house to you…
+To celebrate my birthday */
+
+/* :: house2a [t8n.typewriter-4]
+But there is more to hear than Peckovers
+I know I have that name
+But I wasn’t always a Peckover
+And there is more to me than that. 
+
+<<timed 5s>><<goto "house2b">><</timed>> */
+
+/* :: house2b [t8n.typewriter-4]
+At my heart is not just one family, 
+One line of blood
+But a community that made me work
+Lives that gave me life. 
+
+<<timed 5s>><<goto "house2c">><</timed>> */
+
+/* :: house2c [t8n.typewriter-4]
+I know where you should go
+I know who we need to hear from
+Before we can properly celebrate
+Before you can feel comfortable to celebrate here
+
+
+<<timed 5s>><<goto "HouseBasement">><</timed>> */
+
+:: bs1 [t8n.typewriter-4]
+<main class="main-section">
+<<audio "maria1" play>><div id ="audioMount">audio playing...</div>
+<<timed 25s>><<replace "#audioMount">><<button "Next">> <<goto "bs2">><</button>><</replace>><</timed>>
+</main>
+/* I’m not a Peckover
+But I am always here in Peckover
+I’m 15 - from here - Wisbech
+Have been all my life.  */
+
+/* :: bs2 [t8n.typewriter-4]
+I’m not a Peckover
+But I am always here in Peckover
+I’m 15 - from here - Wisbech
+Have been all my life. 
+<<timed 5s>><<goto "bs3">><</timed>> */
+
+/* :: bs3 [t8n.typewriter-4]
+My life is normally down here
+Not up there
+But you want me to come to a Party? 
+Are you sure?  
+I don’t normally get invited. 
+
+<<timed 5s>><<goto "bs4">><</timed>> */
+
+/* :: bs4 [t8n.typewriter-4]
+First come into my world
+You’ll see there are rules here 
+Let’s see if you can find them all
+
+<<timed 5s>><<goto "bs5">><</timed>> */
+
+
+:: bs2 [t8n.typewriter-4]
+<main class="main-section">
+1. I’m Pride of Place. Be careful with the Plate
+
+<div id="coderesult"></div>
+ \/% CODEWORD FEEDBACK %/
+\   <div id="resultbutton">
+\/% CODEWORD INPUT %/
+\<div class="css-input code-input">\
+<<textbox "$basement1" "">></div>
+<<button "Enter">>
+</div>
+</main>
+ \/% PASSWORD CODE %/
+      \ <<set $basement1 to $basement1.toUpperCase()>>
+      \
+\/% CODEWORD CORRECT %/
+<<if $basement1 isnot "" and $basement1 is "BREAKAGES">>
+<<replace "#coderesult">>CORRECT<</replace>>
+<<timed 3s>><<goto [[bs3]]>><</timed>>
+<</if>>
+\/% CODEWORD INCORRECT %/
+<<if $basement1 isnot "" and $basement1 is not "BREAKAGES">>
+<<replace "#coderesult">>Thats not right.<</replace>>
+<<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+<</if>><</button>>
+</div>
+</main>
+
+:: bs3 [t8n.typewriter-4]
+<main class="main-section">
+Rule 1: Any breakages shall be deducted from your pay
+<<timed 5s>><<goto [[bs4]]>><</timed>>
+</main>
+
+:: bs4 [t8n.typewriter-4]
+<main class="main-section">
+2. Let’s get the creases out of that top
+
+
+<div id="coderesult"></div>
+ \/% CODEWORD FEEDBACK %/
+\   <div id="resultbutton">
+\/% CODEWORD INPUT %/
+\<div class="css-input code-input">\
+<<textbox "$basement2" "">></div>
+<<button "Enter">>
+</div>
+</main>
+ \/% PASSWORD CODE %/
+      \ <<set $basement2 to $basement2.toUpperCase()>>
+      \
+\/% CODEWORD CORRECT %/
+<<if $basement2 isnot "" and $basement2 is "ADDRESS">>
+<<replace "#coderesult">>CORRECT<</replace>>
+<<timed 3s>><<goto [[bs5]]>><</timed>>
+<</if>>
+\/% CODEWORD INCORRECT %/
+<<if $basement1 isnot "" and $basement1 is not "ADDRESS">>
+<<replace "#coderesult">>Thats not right.<</replace>>
+<<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+<</if>><</button>>
+</div>
+</main>
+
+:: bs5 [t8n.typewriter-4]
+<main class="main-section">
+Rule 2 : Always address your employer as Sir or Ma’am
+<<timed 5s>><<goto [[bs6]]>><</timed>>
+</main>
+
+:: bs6 [t8n.typewriter-4]
+<main class="main-section">
+3. Where food is chopped?
+
+
+<div id="coderesult"></div>
+ \/% CODEWORD FEEDBACK %/
+\   <div id="resultbutton">
+\/% CODEWORD INPUT %/
+\<div class="css-input code-input">\
+<<textbox "$basement3" "">></div>
+<<button "Enter">>
+</div>
+</main>
+ \/% PASSWORD CODE %/
+      \ <<set $basement3 to $basement3.toUpperCase()>>
+      \
+\/% CODEWORD CORRECT %/
+<<if $basement3 isnot "" and $basement3 is "SPEAK">>
+<<replace "#coderesult">>CORRECT<</replace>>
+<<timed 3s>><<goto [[bs7]]>><</timed>>
+<</if>>
+\/% CODEWORD INCORRECT %/
+<<if $basement1 isnot "" and $basement1 is not "SPEAK">>
+<<replace "#coderesult">>Thats not right.<</replace>>
+<<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+<</if>><</button>>
+</div>
+</main>
+
+:: bs7 [t8n.typewriter-4]
+<main class="main-section">
+Rule 3: Never speak to another servant in front of your employer. 
+<<timed 5s>><<goto [[bs8]]>><</timed>>
+</main>
+
+:: bs8 [t8n.typewriter-4]
+<main class="main-section">
+4. Where temperatures drop
+
+
+<div id="coderesult"></div>
+ \/% CODEWORD FEEDBACK %/
+\   <div id="resultbutton">
+\/% CODEWORD INPUT %/
+\<div class="css-input code-input">\
+<<textbox "$basement4" "">></div>
+<<button "Enter">>
+</div>
+</main>
+ \/% PASSWORD CODE %/
+      \ <<set $basement4 to $basement4.toUpperCase()>>
+      \
+\/% CODEWORD CORRECT %/
+<<if $basement4 isnot "" and $basement4 is "STILL">>
+<<replace "#coderesult">>CORRECT<</replace>>
+<<timed 3s>><<goto [[bs9]]>><</timed>>
+<</if>>
+\/% CODEWORD INCORRECT %/
+<<if $basement1 isnot "" and $basement1 is not "STILL">>
+<<replace "#coderesult">>Thats not right.<</replace>>
+<<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+<</if>><</button>>
+</div>
+</main>
+
+:: bs9 [t8n.typewriter-4]
+<main class="main-section">
+Rule 4 : When spoken to, stand still
+<<timed 5s>><<goto [[bs10]]>><</timed>>
+</main>
+
+:: bs10 [t8n.typewriter-4]
+<main class="main-section">
+5. Come find me where I like to Bop ...
+
+<<timed 5s>><<button "Next">><<goto "HouseBasementCode">><</button>><</timed>>
+</main>
+
+
+
+
+:: end1 [t8n.typewriter-4]
+<main class="main-section"><<audio "House3" play>><div id ="audioMount">audio playing...</div>
+<<timed 40s>> <<goto "House">><</timed>>
+</main>
+
+/* :: 11 [t8n.typewriter-4]{"position":"425,1100","size":"100,100"}
+<main class="main-section">
+We could setup a tour
+
+and then break it
+
+</main>
+<<timed 3s>><<goto "tour1">><</timed>> */
+
+/* :: tour1 [t8n.typewriter-4]
+<main class="main-section"><img id="logoToGlitch" class="logoToGlitch" src="https://youhavefoundconey.net/CG/what/assets/img/ConeyLogo.png" >
+HELLO
+
+WELCOME TO THE TOUR TODAY
+
+STAY EXACTLY WHERE YOU ARE AND FOLLOW THE OFFICIAL INSTRUCTIONS
+
+WE'LL KEEP YOU SAFE
+
+IF YOU LOOK TO THE LEFT YOU WILL SEE
+
+</main>
+<<timed 7s>><<addclass "#logoToGlitch" "coneylogoglitch">><</timed>>
+<<timed 9s>><<goto "glitch">><</timed>> */
+
+
+
+/* :: glitch
+
+/* TODO work on the message  */
+/*<main class="main-section">
+
+  <div id="msgMount" ></div>
+  <<timed 3s>>
+  Incoming Message -  <<button "Click to receive">><<audio "tourescape" play>><<timed 5s>><<replace "#btnMount">><<button "Message received">><<goto "tourConfirm">><</button>><</replace>><</timed>><</button>><</timed>>
+  <iframe id="iframeAudio" src="https://youhavefoundconey.net/CG/assets/audio/static.mp3" style="display:none" allow="autoplay" ></iframe>
+  <div class="filmgrain"></div>
+  <div id="noise" class="noise">
+    <div class="glitch-shape1"></div>
+    <div class="glitch-shape2"></div>
+    <div class="glitch-shape3"></div>
+    <div id="btnMount"></div>
+  </div>
+</main>
+
+   <<timed 4s>><<removeclass "#noise" "noise">><</timed>> */
+
+
+
+
+
+
+
+
